@@ -1,272 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
 /*  CSS Reset                  */
 
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-  }
-  /*
+}
+
+/*
     2. Remove default margin
   */
-  * {
+* {
     margin: 0;
-  }
-  /*
+}
+
+/*
     3. Allow percentage-based heights in the application
   */
-  html, body {
+html,
+body {
     height: 100%;
-  }
-  /*
+}
+
+/*
     Typographic tweaks!
     4. Add accessible line-height
     5. Improve text rendering
   */
-  body {
+body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-  }
-  /*
-    6. Improve media defaults
-  */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
-    7. Remove built-in form typography styles
-  */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
-    8. Avoid text overflows
-  */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
-    9. Create a root stacking context
-  */
-  #root, #__next {
-    isolation: isolate;
-  }
-
-  html, body {margin: 0; height: 100%; overflow: auto}
-
- @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
-
-   /* Variables */
-
-:root {
-    --clr-dark-gray-blue: hsl(217, 19%, 35%);         
-    --clr-dark-blue: hsl(214, 17%, 51%);     
-    --clr-gray-blue: hsl(212, 23%, 69%);
-    --clr-light-gray-blue: hsl(210, 46%, 95%);
-
-
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
 }
 
-/* Properties */
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: auto
+}
+
+:root {
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-gray: hsl(212, 45%, 89%);
+    --clr-gray-blue: hsl(220, 15%, 55%);
+    --clr-dark-blue: hsl(218, 44%, 22%);
+    font-size: 15px;
+}
 
 body {
-  background-color: var(--clr-light-gray-blue);
+    background-color: var(--clr-light-gray);
+    height: 100%;
 }
 
 main {
+    margin: 5rem auto;
+    width: 19rem;
+    max-width: 95%;
     display: flex;
     flex-direction: column;
-    margin: 6rem auto;
-    width: 27rem;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--clr-white);
+    padding: 1rem 1rem;
     border-radius: 1rem;
-    background-color: white;
 }
 
-#drawers {
-    width: 100%;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    height: 17rem;
-    object-fit: cover;
-    object-position: 100% 20%;
+img {
+    border-radius: 0.5rem;
 }
 
-.container {
-  margin: 2rem;
-  margin-bottom: 1.5rem;
+h1,
+p {
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--clr-dark-gray-blue);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--clr-dark-blue);
 }
 
 p {
-  color: var(--clr-dark-blue);
-  font-weight: 500;
-  font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--clr-gray-blue);
 }
 
-.social {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 1rem;
-  margin-top: 2rem;
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
 }
 
-.date p {
-  margin: 0;
-  color: var(--clr-gray-blue);
-}
-
-h2 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--clr-dark-gray-blue);
-}
-
-#avatar {
-  border-radius: 50%;
-  width: 3.2rem;
-  height: 3.2rem;
-}
-
-.share {
-  margin-left: auto;
-  position: relative;
-}
-
-span {
-  font-weight: 500;
-  color: var(--clr-gray-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.25rem;
-  font-size: 0.9rem;
-}
-
-.bubble {
-  position: absolute;
-  gap: 1.5rem;
-  align-items: center;
-  background-color: var(--clr-dark-gray-blue);
-  width: 27rem;
-  padding: 1.5rem 2rem;
-  left: -610%;
-  bottom: 0px;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
-.default {
-  display: none;
-}
-
-.clicked {
-  display: flex;
-}
-
-.cursor {
-  cursor: pointer;
-}
-
-button {
-  border: 0;
-  background: none;
-}
-
-#share {
-  position: relative;
-  z-index: 1;
-  border-radius: 50%;
-  background-color: var(--clr-light-gray-blue);
-  width: 1.2rem;
-  height: 1.2rem;
-  align-self: center;
-  padding: 0.7rem;
-  cursor: pointer;
-  color: var(--clr-dark-blue);
-}
-
-#share:hover {
-  background-color: var(--clr-dark-blue);
-  color: white;
-}
-
-.attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-
-@media screen and (max-width:410px) {
-  main {
-    width: 90%;
-  }  
-
-  .bubble {
-    width: 90vw;
-    left: -558%;
-  }
-
-}
-
-@media screen and (min-width:800px) {
-  main {
-    flex-flow: row nowrap;
-    width: 52rem;
-    height: 23rem;
-    margin: 20rem auto;
-  }
-
-  #drawers {
-    height: 100%;
-    width: 20rem;
-    object-position: 20% 100%;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 1rem;
-  }
-
-  .container {
-    margin: 1rem;
-  }
-
-  .text {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .bubble {
-    position: absolute;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--clr-dark-gray-blue);
-    width: 17rem;
-    bottom: auto;
-    border-radius: 0.6rem;
-    top: -180%;
-    left: -195%;
-  }
-  
-  .bubble::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border: 0.7em solid transparent;
-    border-top-color: var(--clr-dark-gray-blue);
-    border-bottom: 0;
-    margin-left: -0.625em;
-    margin-bottom: -0.625em;
-  }
-
-  #share {
-    position: static;
-  }
-
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
